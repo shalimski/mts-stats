@@ -1,3 +1,4 @@
+
 import org.json.JSONArray
 import org.json.JSONObject
 import org.json.XML
@@ -23,7 +24,8 @@ fun main(args: Array<String>) {
     (arr as JSONArray).forEach {
         val datetime = if ((it as JSONObject).has("bd")) it.get("bd") as String else it.get("d") as String
         val my = datetime.slice(3..9)
-        val kb = (it as JSONObject).get("du")
+
+        val kb = it.get("du")
 
         if (kb is String && kb.endsWith("Kb")) {
 
